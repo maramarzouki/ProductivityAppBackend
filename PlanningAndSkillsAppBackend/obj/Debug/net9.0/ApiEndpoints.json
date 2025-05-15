@@ -1,0 +1,682 @@
+[
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "GetUserByEmail",
+    "RelativePath": "api/auth/getUserByEmail/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDTO",
+        "Type": "Model.DTOs.UserDTOs.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Model.UserModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/auth/resetPassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "resetPasswordDTO",
+        "Type": "Model.DTOs.UserDTOs.ResetPasswordDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "SendCode",
+    "RelativePath": "api/auth/sendCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "VerifyCode",
+    "RelativePath": "api/auth/verifyCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "verifyCodeDTO",
+        "Type": "Model.DTOs.UserDTOs.VerifyCodeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "CancelChallenge",
+    "RelativePath": "api/challenge/cancelChallenge/{challengeId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "CheckStatus",
+    "RelativePath": "api/challenge/checkStatus/{challengeId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "ConfirmToday",
+    "RelativePath": "api/challenge/confirmToday/{challengeId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "CreateChallenge",
+    "RelativePath": "api/challenge/createChallenge",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challenge",
+        "Type": "Model.ChallengeModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "DeleteChallenge",
+    "RelativePath": "api/challenge/deleteChallenge/{challengeId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "GetChallengeById",
+    "RelativePath": "api/challenge/getChallengeDetails/{challengeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "GetUserChallenges",
+    "RelativePath": "api/challenge/getUserChallenges/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "RestartChallenge",
+    "RelativePath": "api/challenge/restartChallenge/{challengeId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "StartChallenge",
+    "RelativePath": "api/challenge/startChallenge/{challengeId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ChallengeController",
+    "Method": "UpdateChallenge",
+    "RelativePath": "api/challenge/updateChallenge",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challenge",
+        "Type": "Model.ChallengeModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.HabitController",
+    "Method": "CheckHabit",
+    "RelativePath": "api/habit/checkHabit/{habitId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habitId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "isChecked",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.HabitController",
+    "Method": "AddHabit",
+    "RelativePath": "api/habit/createHabit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habit",
+        "Type": "Model.HabitModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.HabitController",
+    "Method": "DeleteHabit",
+    "RelativePath": "api/habit/deleteHabit/{habitId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habitId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.HabitController",
+    "Method": "GetHabitsByChallengeID",
+    "RelativePath": "api/habit/getHabitsByChallengeID/{challengeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "challengeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.HabitController",
+    "Method": "UpdateHabit",
+    "RelativePath": "api/habit/updateHabit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "habit",
+        "Type": "Model.HabitModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ProjectController",
+    "Method": "CompleteProject",
+    "RelativePath": "api/project/completeProject/{projectId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "isCompleted",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ProjectController",
+    "Method": "CreateProject",
+    "RelativePath": "api/project/createProject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "project",
+        "Type": "Model.ProjectModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ProjectController",
+    "Method": "DeleteProject",
+    "RelativePath": "api/project/deleteProject/{projectId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ProjectController",
+    "Method": "GetProjectByID",
+    "RelativePath": "api/project/getProjectById/{projectId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ProjectController",
+    "Method": "GetUserProject",
+    "RelativePath": "api/project/getUserProjects/{userID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ProjectController",
+    "Method": "UpdateProject",
+    "RelativePath": "api/project/updateProject",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "project",
+        "Type": "Model.ProjectModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ReminderController",
+    "Method": "CreateReminder",
+    "RelativePath": "api/reminder/createReminder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminder",
+        "Type": "Model.ReminderModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ReminderController",
+    "Method": "DeleteReminder",
+    "RelativePath": "api/reminder/deleteReminder/{reminderID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminderID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ReminderController",
+    "Method": "GetUserReminders",
+    "RelativePath": "api/reminder/getUserReminders/{userID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ReminderController",
+    "Method": "ToggleReminder",
+    "RelativePath": "api/reminder/toggleReminder/{reminderID}/{userID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reminderID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "isActive",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "CheckTask",
+    "RelativePath": "api/task/checkTask/{taskId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "isChecked",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "CreateTask",
+    "RelativePath": "api/task/createTask",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "task",
+        "Type": "Model.TaskModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "DeleteTask",
+    "RelativePath": "api/task/deleteTask/{taskID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "GetTaskById",
+    "RelativePath": "api/task/getTaskById/{taskID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "GetTasksByProjectId",
+    "RelativePath": "api/task/getTasksByProjectId/{projectId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "projectId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "GetUserTasks",
+    "RelativePath": "api/task/getUserTasks/{userID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "GetUserTasks",
+    "RelativePath": "api/task/getUserTasks/{userID}/{selectedDate}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "selectedDate",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.TaskController",
+    "Method": "UpdateTask",
+    "RelativePath": "api/task/updateTask",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "task",
+        "Type": "Model.TaskModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PlanningAndSkillsAppBackend.WeatherForecast, PlanningAndSkillsAppBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

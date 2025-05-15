@@ -1,0 +1,82 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    // Razor gives you a ViewContext right out of the box—no injection needed
+    var vals = ViewContext?.RouteData?.Values
+               ?? new RouteValueDictionary();
+
+    // Safely pull the controller & action, or empty string
+    string currController = (vals["controller"] as string ?? "").ToLowerInvariant();
+    string currAction = (vals["action"] as string ?? "").ToLowerInvariant();
+
+    // Returns "active" when both match
+    Func<string, string, string> isActive = (ctrl, act) =>
+        (ctrl.ToLowerInvariant() == currController
+         && act.ToLowerInvariant() == currAction)
+        ? "active"
+        : "";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] – MyApp</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- 1) Global CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- 2) Page-specific CSS (if any) -->
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+<!-- <header>
+        <div class="topbar">
+            <div class="profile">
+                <img src="~/images/avatar-placeholder.png" alt="Profile" />
+                @{
+                    var user = Context.Session.GetString("AdminUser") ?? "Guest";
+                }
+                <span>@user</span>
+            </div>
+        </div>
+    </header> -->
+
+    <div class="sidebar">
+        <div class="logo">Admin Space</div>
+        <nav>
+            <a asp-controller="Dashboard" asp-action="Index"
+               class="@(isActive("Dashboard","Index"))">
+                <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </a>
+            <a asp-controller="Categories" asp-action="Index"
+               class="@(isActive("Categories","Index"))">
+                <i class="fas fa-list"></i> Categories
+            </a>
+            <!-- more links… -->
+        </nav>
+    </div>
+
+
+
+    <main role="main" class="main-content">
+        @RenderBody()
+    </main>
+
+    <footer>
+        &copy; @DateTime.Now.Year My Company
+    </footer>
+
+    <!-- 3) Global scripts -->
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <!-- 4) Page-specific scripts (if any) -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

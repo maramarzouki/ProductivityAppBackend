@@ -1,0 +1,702 @@
+{
+  "Version": 1,
+  "Hash": "M3ycFLchNBs+qSCOFdHmjJ/k24r96VPJNOp+20xH/zc=",
+  "Source": "PlanningAndSkillsAppBackend",
+  "BasePath": "_content/PlanningAndSkillsAppBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PlanningAndSkillsAppBackend\\wwwroot",
+      "Source": "PlanningAndSkillsAppBackend",
+      "ContentRoot": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\",
+      "BasePath": "_content/PlanningAndSkillsAppBackend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\dawdtfmq4l-fzay4wp1a8.gz",
+      "SourceId": "PlanningAndSkillsAppBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/PlanningAndSkillsAppBackend",
+      "RelativePath": "css/site#[.{fingerprint=fzay4wp1a8}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\site.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ezgjntvuf2",
+      "Integrity": "RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\iqwwn8mhxt-18cv2q0s4k.gz",
+      "SourceId": "PlanningAndSkillsAppBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/PlanningAndSkillsAppBackend",
+      "RelativePath": "css/login#[.{fingerprint=18cv2q0s4k}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\login.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "wqp48susta",
+      "Integrity": "WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\login.css",
+      "SourceId": "PlanningAndSkillsAppBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\",
+      "BasePath": "_content/PlanningAndSkillsAppBackend",
+      "RelativePath": "css/login#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "18cv2q0s4k",
+      "Integrity": "oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\site.css",
+      "SourceId": "PlanningAndSkillsAppBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\",
+      "BasePath": "_content/PlanningAndSkillsAppBackend",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fzay4wp1a8",
+      "Integrity": "G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/login.18cv2q0s4k.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\iqwwn8mhxt-18cv2q0s4k.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001131221719"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "883"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 21:07:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "18cv2q0s4k"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.18cv2q0s4k.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 21:07:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "18cv2q0s4k"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.18cv2q0s4k.css.gz",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\iqwwn8mhxt-18cv2q0s4k.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "883"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 21:07:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "18cv2q0s4k"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\iqwwn8mhxt-18cv2q0s4k.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001131221719"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "883"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 21:07:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2405"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 21:07:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oTnBSr3aw6ETn56kR4FD0WEY7EjFRJ0I9TP4eRBy31M="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.css.gz",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\iqwwn8mhxt-18cv2q0s4k.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "883"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 14 May 2025 21:07:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WDOi41VM5sl5x5SOFyhuP2qL6Wd2pOZHJoEp0nzAya0="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\dawdtfmq4l-fzay4wp1a8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001547987616"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "645"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 19:57:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1703"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 19:57:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\dawdtfmq4l-fzay4wp1a8.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "645"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 19:57:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.fzay4wp1a8.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\dawdtfmq4l-fzay4wp1a8.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001547987616"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "645"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 19:57:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fzay4wp1a8"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.fzay4wp1a8.css",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1703"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 19:57:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fzay4wp1a8"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G0DEN0BA8Q8k1oKwHtCMXIEHdk3YWo/sVkFW1eWLAdM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.fzay4wp1a8.css.gz",
+      "AssetFile": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\obj\\Debug\\net9.0\\compressed\\dawdtfmq4l-fzay4wp1a8.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "645"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 15 May 2025 19:57:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fzay4wp1a8"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RqjKr6rig7KtuWjopVgzYzJNGu0tCH0o1IdrI/Wdfrg="
+        }
+      ]
+    }
+  ]
+}

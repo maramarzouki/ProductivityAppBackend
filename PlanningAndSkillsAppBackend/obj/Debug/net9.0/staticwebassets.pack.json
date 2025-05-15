@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\MARAM\\source\\repos\\PlanningAndSkillsAppBackend\\PlanningAndSkillsAppBackend\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PlanningAndSkillsAppBackend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PlanningAndSkillsAppBackend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.PlanningAndSkillsAppBackend.props",
+      "PackagePath": "build\\PlanningAndSkillsAppBackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.PlanningAndSkillsAppBackend.props",
+      "PackagePath": "buildMultiTargeting\\PlanningAndSkillsAppBackend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.PlanningAndSkillsAppBackend.props",
+      "PackagePath": "buildTransitive\\PlanningAndSkillsAppBackend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

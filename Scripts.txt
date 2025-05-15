@@ -1,0 +1,102 @@
+CREATE TABLE users_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName NVARCHAR(255) NOT NULL,
+    LastName NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(255) NOT NULL UNIQUE,
+    Password NVARCHAR(255) NOT NULL,
+    ChangePasswordCode INT,
+    ChangePasswordCodeExpiry BIGINT 
+);
+
+CREATE TABLE tasks_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Label NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX) NOT NULL,
+    StartTime BIGINT NOT NULL,
+    EndTime BIGINT NOT NULL,
+    Date DATETIME NOT NULL,
+    Complexity INT NOT NULL CHECK (Complexity BETWEEN 0 AND 2),
+    Priority INT NOT NULL CHECK (Priority BETWEEN 0 AND 2),
+    TASKCOLOR NVARCHAR(255) NOT NULL,
+    Interval INT,
+    Duration INT NULL,
+    DurationUnit INT NULL CHECK (DurationUnit BETWEEN 0 AND 2),
+    IsChecked BIT NOT NULL DEFAULT 0,
+    UserId INT NOT NULL,
+    CONSTRAINT FK_User FOREIGN KEY (UserId) REFERENCES users_table(Id) ON DELETE CASCADE
+);
+
+ALTER TABLE tasks_table
+  ADD repetitionDates NVARCHAR(MAX) NULL,
+  ADD Weekdays NVARCHAR(MAX) NULL;
+
+// CREATE TABLE reminders_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(255) NOT NULL,
+    IsActive BIT NOT NULL,
+    ReminderDate DATETIME NOT NULL,
+    ReminderTime BIGINT NOT NULL,
+    UserId INT NOT NULL,
+    CONSTRAINT FK_User FOREIGN KEY (UserId) REFERENCES users_table(Id) ON DELETE CASCADE
+); //
+
+CREATE TABLE reminders_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(255) NOT NULL,
+    IsActive BIT NOT NULL,
+    ReminderTime NVARCHAR(255) NOT NULL,
+    UserId INT NOT NULL,
+    CONSTRAINT FK_UserReminder FOREIGN KEY (UserId) REFERENCES users_table(Id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE projects_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,      
+    Title NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX) NOT NULL,
+    Deadline DATETIME NOT NULL,
+    IsCompleted BIT NOT NULL,               
+    UserId INT NOT NULL,      
+    CONSTRAINT FK_Project_Users FOREIGN KEY (UserId) REFERENCES projects_table(Id) ON DELETE CASCADE           
+);
+
+ALTER TABLE tasks_table
+ADD project_Id INT NULL;
+
+CREATE TABLE challenges_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX) NULL,
+    ChallengeTotalDays INT NOT NULL,
+    DaysCompletedNb INT NOT NULL,
+    ChallengeDays NVARCHAR(MAX) NOT NULL, -- storing serialized DateTime[] as JSON
+    IsCanceled BIT NOT NULL,
+    IsCompleted BIT NOT NULL,
+    UserId INT NOT NULL,
+    CONSTRAINT FK_Challenge_User FOREIGN KEY (UserId) REFERENCES users_table(Id)
+);
+
+ALTER TABLE challenges_table
+  ADD StartDate     DATETIME NOT NULL,
+  ADD TotalDays     INT      NOT NULL,
+  ADD CompletedDates NVARCHAR(MAX) NULL;  -- JSON array of ISO dates
+
+-- Optionally remove old columns:
+ALTER TABLE challenges_table
+  DROP COLUMN ChallengeDays,
+  DROP COLUMN DaysCompletedNb;
+
+CREATE TABLE habits_table (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    IsDone BIT NOT NULL,
+    ChallengeId INT NOT NULL,
+    CONSTRAINT FK_Habit_Challenge FOREIGN KEY (ChallengeId) REFERENCES challenges_table(Id) ON DELETE CASCADE  
+);
+
+
+CREATE TABLE Admins (
+  Id           INT IDENTITY(1,1) PRIMARY KEY,
+  Username     NVARCHAR(100) NOT NULL UNIQUE,
+  PasswordHash NVARCHAR(200) NOT NULL
+);

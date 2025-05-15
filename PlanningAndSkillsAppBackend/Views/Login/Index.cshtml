@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+    
+@{
+    Layout = "_LoginLayout";
+}
+
+<div class="login-container">
+    @* <div class="login-left"> *@
+    @*     <img src="~/images/logo.png" alt="Meliora" class="logo" /> *@
+    @*     <!-- you can add decorative glows as absolutely‐positioned divs if you like --> *@
+    @*     <div class="glow glow-top"></div> *@
+    @*     <div class="glow glow-bottom"></div> *@
+    @* </div> *@
+
+    <div class="login-right">
+        <div class="login-card">
+            <h2>Login</h2>
+            <form asp-action="Index" method="post">
+                @Html.AntiForgeryToken()
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="username" placeholder="Username" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required />
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="errors">
+                    @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <p>@err.ErrorMessage</p>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

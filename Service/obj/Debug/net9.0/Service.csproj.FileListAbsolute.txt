@@ -1,0 +1,17 @@
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Service.deps.json
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Service.dll
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Service.pdb
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Model.dll
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Repository.dll
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Repository.pdb
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\bin\Debug\net9.0\Model.pdb
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.csproj.AssemblyReference.cache
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.AssemblyInfoInputs.cache
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.AssemblyInfo.cs
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.csproj.CoreCompileInputs.cache
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.csproj.Up2Date
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.dll
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\refint\Service.dll
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\Service.pdb
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Service\obj\Debug\net9.0\ref\Service.dll

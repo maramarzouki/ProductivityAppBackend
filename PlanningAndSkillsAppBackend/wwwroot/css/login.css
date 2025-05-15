@@ -1,0 +1,127 @@
+﻿html, body, main {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* full-screen flex container */
+.login-container {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* left panel */
+/*.login-left {*/
+/*    position: relative;
+    flex: 1;*/
+/*width: 40%;
+    background: #130F26;*/ /* dark purple */
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+    .login-left .logo {
+        width: 160px;
+        filter: drop-shadow(0 0 10px rgba(255,190,0,0.6));
+    }
+/* decorative glows */
+/*.glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+}
+
+.glow-top {
+    top: 20%;
+    left: 10%;
+    background: #ffd700;
+}*/
+
+/*.glow-bottom {
+    bottom: 10%;
+    right: 15%;
+    background: #ff7f50;
+}*/
+
+/* right panel */
+.login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+}
+
+/* the white card */
+.login-card {
+    background: white;
+    padding: 2rem;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+    .login-card h2 {
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        color: #1b1324;
+    }
+
+/* input groups with icons */
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+    .input-group i {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        color: #999;
+    }
+
+    .input-group input {
+        width: 78%;
+        padding: 0.75rem 1rem 0.75rem 3rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 0.95rem;
+    }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #9b59b6;
+        }
+
+/* purple login button */
+.btn-login {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background: #130F26;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .btn-login:hover {
+        background: #8e44ad;
+    }
+
+/* error messages */
+.errors p {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+}
+<div class="categories-page">
+    <div class="header">
+        <h1>@ViewData["Title"]</h1>
+        <!-- “New category” button -->
+        <a asp-action="Create"
+           class="btn btn-primary new-category-btn">
+            New category
+        </a>
+    </div>
+
+    <div class="category-list">
+        @* Loop your model and render each category as a “card” *@
+        @foreach (var cat in Model)
+        {
+            <a asp-action="Details"
+               asp-route-id="@cat.Id"
+               class="category-card">
+                @cat.Name
+            </a>
+        }
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .categories-page {
+            padding: 1rem;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .category-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .category-card {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: #fff;
+            border-radius: .5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,.1);
+            text-decoration: none;
+            color: #333;
+            transition: box-shadow .2s;
+        }
+        .category-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+        }
+        .new-category-btn {
+            /* example styling; replace with your own */
+        }
+    </style>
