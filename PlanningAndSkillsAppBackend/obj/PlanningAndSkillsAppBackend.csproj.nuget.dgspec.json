@@ -50,6 +50,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotnetGeminiSDK": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.0.2, )"
@@ -133,6 +137,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotnetGeminiSDK": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.1, )"
@@ -223,6 +231,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotnetGeminiSDK": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -305,6 +317,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "DotnetGeminiSDK": {
+              "target": "Package",
+              "version": "[1.0.14, )"
             },
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",

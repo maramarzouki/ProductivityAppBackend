@@ -1,0 +1,32 @@
+﻿@model Model.CategoryModels.YoutubeVideoModel
+
+<div id="editVideoModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-window">
+        <button type="button" class="modal-close" onclick="closeEditVideoModal()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <form asp-action="Edit" asp-controller="YoutubeVideo" method="post" class="modal-form">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CategoryId" />
+
+            <h2 class="modal-title">Edit YouTube Video</h2>
+
+            <div class="modal-field">
+                <input asp-for="Title" placeholder="Title" required />
+            </div>
+
+            @* <div class="modal-field"> *@
+            @*     <input asp-for="YouTubeVideoId" placeholder="Video ID" required /> *@
+            @* </div> *@
+
+            <div class="modal-field modal-datefield">
+                <input asp-for="PublishedAt" type="date" required />
+            </div>
+
+            <button type="submit" class="modal-add-button">Save Changes</button>
+        </form>
+    </div>
+</div>

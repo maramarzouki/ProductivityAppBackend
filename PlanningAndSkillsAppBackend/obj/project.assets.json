@@ -60,6 +60,19 @@
           }
         }
       },
+      "DotnetGeminiSDK/1.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/DotnetGeminiSDK.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/DotnetGeminiSDK.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.3.0": {
         "type": "package",
         "dependencies": {
@@ -1300,6 +1313,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore.SwaggerUI/7.2.0": {
         "type": "package",
         "compile": {
@@ -1624,6 +1650,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "DotnetGeminiSDK": "1.0.14",
           "Microsoft.Data.SqlClient": "6.0.2",
           "Microsoft.Extensions.Configuration": "9.0.4",
           "Microsoft.Extensions.DependencyInjection": "9.0.4"
@@ -1639,6 +1666,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "DotnetGeminiSDK": "1.0.14",
           "Microsoft.Extensions.DependencyInjection": "9.0.4",
           "Microsoft.Extensions.Hosting": "9.0.4",
           "Model": "1.0.0"
@@ -1655,6 +1683,7 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "DotnetGeminiSDK": "1.0.14",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
           "Microsoft.Extensions.DependencyInjection": "9.0.4",
@@ -1739,6 +1768,19 @@
         "lib/netstandard2.1/BCrypt.Net-Next.dll",
         "lib/netstandard2.1/BCrypt.Net-Next.xml",
         "readme.md"
+      ]
+    },
+    "DotnetGeminiSDK/1.0.14": {
+      "sha512": "JsIhj7WLhWUkhM6NmBKvYBNWnins6jPu7aO6/r02bov/C6DGIB7kBZOoNP+QV3OOWoGcYbaoh71W4IuSiNL0Nw==",
+      "type": "package",
+      "path": "dotnetgeminisdk/1.0.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetgeminisdk.1.0.14.nupkg.sha512",
+        "dotnetgeminisdk.nuspec",
+        "lib/netstandard2.0/DotnetGeminiSDK.dll",
+        "lib/netstandard2.1/DotnetGeminiSDK.dll"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.3.0": {
@@ -3291,6 +3333,36 @@
         "version.txt"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Swashbuckle.AspNetCore.SwaggerUI/7.2.0": {
       "sha512": "hgrXeKzyp5OGN8qVvL7A+vhmU7mDJTfGpiMBRL66IcfLOyna8UTLtn3cC3CghamXpRDufcc9ciklTszUGEQK0w==",
       "type": "package",
@@ -3882,6 +3954,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "DotnetGeminiSDK >= 1.0.14",
       "Microsoft.AspNetCore.OpenApi >= 9.0.1",
       "Microsoft.Extensions.DependencyInjection >= 9.0.4",
       "Microsoft.Extensions.Hosting >= 9.0.4",
@@ -3943,6 +4016,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "DotnetGeminiSDK": {
+            "target": "Package",
+            "version": "[1.0.14, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[9.0.1, )"

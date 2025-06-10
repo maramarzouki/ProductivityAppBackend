@@ -6,18 +6,26 @@ using System.Threading.Tasks;
 using Model;
 using Model.DTOs.UserDTOs;
 using Repository.TaskRepository;
+using Repository.UserRepository;
 
 namespace Service.TaskService
 {
     public class TaskService : ITaskService
     {
         private readonly ITaskRepository _taskRepository;
-        public TaskService(ITaskRepository taskRepository)
+        private readonly IUserRepository _userRepository;
+        public TaskService(ITaskRepository taskRepository, IUserRepository userRepository)
         {
             _taskRepository = taskRepository;
+            _userRepository = userRepository;
         }
         public async Task<string> CreateTask(TaskModel task)
         {
+            var user = _userRepository.GetUserById(task.UserId);
+            if (user == null)
+            {
+                throw new Exception("User not found!");
+            }
             var newTask = new TaskModel
             {
                 Id = task.Id,

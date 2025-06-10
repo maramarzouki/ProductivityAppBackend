@@ -106,7 +106,8 @@ namespace Service.UserService
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
-                Password = HashPassword(user.Password)
+                Password = HashPassword(user.Password),
+                IsFirstTime = user.IsFirstTime
             };
             await _userRepository.CreateUser(newUser);
             return "User registred successfully!";
@@ -171,6 +172,50 @@ namespace Service.UserService
                 throw new Exception("User not found!");
             }
             return user;
+        }
+
+        public async Task<UserModel> GetUserById(int id)
+        {
+            var user = await _userRepository.GetUserById(id);
+            if (user == null)
+            {
+                throw new Exception("User not found!");
+            }
+            return user;
+        }
+
+        public async Task<string> UpdateUser(UserModel user)
+        {
+            if (user == null)
+            {
+                throw new Exception("User not found!");
+            }
+            var res = await _userRepository.UpdateUser(user);
+            if (res)
+            {
+                return "User updated!";
+            }
+            return "Error updating the user";
+        }
+
+        public async Task<string> UpdateIsFirstTime(int userId)
+        {
+            var res = await _userRepository.UpdateIsFirstTime(userId);
+            if (res)
+            {
+                return "User IsFirstTime updated!";
+            }
+            return "Error updating IsFirstTime";
+        }
+
+        public async Task<string> FillAreasToDevelop(int userId, string[] areasToDevelop)
+        {
+            var res = await _userRepository.FillAreasToDevelop(userId, areasToDevelop);
+            if (res)
+            {
+                return "Updated!";
+            }
+            return "Error updating!";
         }
     }
 }

@@ -1,0 +1,594 @@
+﻿@using Model.CategoryModels
+@using System.Linq
+
+@{
+	ViewData["Title"] = $"{Model.Name} Category";
+	ViewBag.CategoryId = Model.Id;
+}
+
+<div class="category-details-page">
+	<div class="header">
+		<h1>@ViewData["Title"]</h1>
+
+		<div class="action-buttons">
+			<a asp-action="Edit"
+			   asp-route-id="@Model.Id"
+			   asp-controller="Categories"
+			   class="btn-pill edit">
+				<i class="fa-solid fa-pencil"></i>
+			</a>
+
+			<form asp-action="Delete"
+				  asp-route-id="@Model.Id"
+				  asp-controller="Categories"
+				  method="post"
+				  onsubmit="return confirm('⚠️ Are you sure you want to delete the “@Model.Name” category? This cannot be undone.');"
+				  style="display:inline;">
+				@Html.AntiForgeryToken()
+				<button type="submit" class="btn-pill delete">
+					<i class="fa-solid fa-trash"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<nav class="tabs">
+		<button class="tab-btn tab-videos active" data-target="videos-panel">
+			<i class="fa-brands fa-youtube"></i>
+			Videos
+		</button>
+		<button class="tab-btn tab-podcasts" data-target="podcasts-panel">
+			<i class="fa-brands fa-spotify"></i>
+			Podcasts
+		</button>
+	</nav>
+
+	<div id="videos-panel" class="tab-panel">
+		<div class="media-items">
+			@if (Model.YoutubeVideoModel != null && Model.YoutubeVideoModel.Count > 0)
+			{
+				@foreach (var video in Model.YoutubeVideoModel)
+				{
+					<div class="media-card">
+						<div class="card-actions">
+							@* <a asp-controller="YoutubeVideo" *@
+							@*    asp-action="Edit" *@
+							@*    asp-route-id="@video.Id" *@
+							@*    class="card-btn edit" *@
+							@*    title="Edit video" style="text-decoration:none;"> *@
+							@* 	<i class="fa-solid fa-pen"></i> *@
+							@* </a> *@
+							<button class="card-btn edit"
+									title="Edit video"
+									type="button"
+									data-video='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(video))' 
+									style="border:none;"
+									onclick="openEditVideoModal(this)">
+								<i class="fa-solid fa-pen"></i>
+							</button>
+							<form asp-controller="YoutubeVideo"
+								  asp-action="Delete"
+								  asp-route-id="@video.Id"
+								  asp-route-categoryId="@video.CategoryId"
+								  method="post"
+								  onsubmit="return confirm('Delete “@video.Title”?');"
+								  class="card-btn delete">
+								@Html.AntiForgeryToken()
+								<button type="submit" title="Delete video">
+									<i class="fa-solid fa-trash"></i>
+								</button>
+							</form>
+						</div>
+						<a href="@video.EmbedUrl" target="_blank" style="text-decoration:none;">
+							<img src="@video.ThumbnailUrl" alt="@video.Title" />
+							<p>@video.Title</p>
+						</a>
+					</div>
+				}
+
+				@* Note the '@foreach' *@
+				@* @foreach (var video in Model.YoutubeVideoModel) *@
+				@* { *@
+				@* 	<div class="media-card"> *@
+				@* 		<a href="@video.EmbedUrl" target="_blank" style="text-decoration: none;"> *@
+				@* 			<img src="@video.ThumbnailUrl" alt="@video.Title" /> *@
+				@* 			<p>@video.Title</p> *@
+				@* 		</a> *@
+				@* 	</div> *@
+				@* } *@
+			}
+			else
+			{
+				<p>No videos yet.</p>
+			}
+		</div>
+		<br />
+		<button type="button" class="add-button" onclick="openVideoModal()">
+			<i class="fas fa-plus add-button__icon" aria-hidden="true"></i>
+			<span class="add-button__label">Add Video</span>
+		</button>
+	</div>
+
+	<div id="podcasts-panel" class="tab-panel" hidden>
+		<div class="media-items">
+			@if (Model.SpotifyPodcastModel != null && Model.SpotifyPodcastModel.Count > 0)
+			{
+				@foreach (var p in Model.SpotifyPodcastModel)
+				{
+					<div class="podcast-card">
+						<div class="card-actions">
+							@* <a asp-controller="SpotifyPodcast" *@
+							@*    asp-action="Edit" *@
+							@*    asp-route-id="@p.Id" *@
+							@*    class="card-btn edit" *@
+							@*    title="Edit podcast"> *@
+							@* 	<i class="fa-solid fa-pen"></i> *@
+							@* </a> *@
+							<button class="card-btn edit"
+									title="Edit podcast"
+									type="button"
+									data-podcast='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(p))'
+									style="border:none;"
+									onclick="openEditPodcastModal(this)">
+								<i class="fa-solid fa-pen"></i>
+							</button>
+							<form asp-controller="SpotifyPodcast"
+								  asp-action="Delete"
+								  asp-route-id="@p.Id"
+								  asp-route-categoryId="@p.CategoryId"
+								  method="post"
+								  onsubmit="return confirm('Delete “@p.Title”?');"
+								  class="card-btn delete">
+								@Html.AntiForgeryToken()
+								<button type="submit" title="Delete podcast">
+									<i class="fa-solid fa-trash"></i>
+								</button>
+							</form>
+						</div>
+						<a href="@p.StreamUrl" target="_blank">
+							<div class="logo-circle"><i class="fa-brands fa-spotify"></i></div>
+							<p class="podcast-title">@p.Title</p>
+						</a>
+					</div>
+				}
+				@* @foreach (var p in Model.SpotifyPodcastModel) *@
+				@* { *@
+				@* 	<div class="podcast-card"> *@
+				@* 		<a href="@p.StreamUrl" target="_blank" style="text-decoration: none;"> *@
+				@* 			<div class="logo-circle"> *@
+				@* 				<i class="fa-brands fa-spotify"></i> *@
+				@* 			</div> *@
+				@* 			<p class="podcast-title">@p.Title</p> *@
+				@* 		</a> *@
+				@* 	</div> *@
+				@* } *@
+			}
+			else
+			{
+				<p>No podcasts yet.</p>
+			}
+		</div>
+		<br />
+		<button type="button" class="add-button" onclick="openPodcastModal()">
+			<i class="fas fa-plus add-button__icon" aria-hidden="true"></i>
+			<span class="add-button__label">Add Podcast</span>
+		</button>
+	</div>
+
+	@* Render the modal partial once *@
+	@await Html.PartialAsync("_AddYoutubeVideoModal")
+	@await Html.PartialAsync("_AddSpotifyPodcastModal")
+	@await Html.PartialAsync("_UpdateYoutubeVideoModal", new Model.CategoryModels.YoutubeVideoModel())
+	@await Html.PartialAsync("_UpdateSpotifyPodcastModal", new Model.CategoryModels.SpotifyPodcastModel())
+	@* @Html.Partial("_AddYoutubeVideoModal") *@
+</div>
+
+@section Scripts {
+	<script>
+		// Tabs
+		document.querySelectorAll('.tabs .tab-btn').forEach(btn => {
+			btn.addEventListener('click', () => {
+				document.querySelectorAll('.tabs .tab-btn').forEach(b => b.classList.remove('active'));
+				document.querySelectorAll('.tab-panel').forEach(p => p.hidden = true);
+				btn.classList.add('active');
+				document.getElementById(btn.dataset.target).hidden = false;
+			});
+		});
+
+		// Modal open/close
+		function openVideoModal() {
+			document.getElementById('videoModal').setAttribute('aria-hidden', 'false');
+			document.body.classList.add('no-scroll');
+		}
+		function closeVideoModal() {
+			document.getElementById('videoModal').setAttribute('aria-hidden', 'true');
+			document.body.classList.remove('no-scroll');
+		}
+		document.addEventListener('keydown', e => {
+			if (e.key === 'Escape') closeVideoModal();
+		});
+
+		function openPodcastModal() {
+			document.getElementById('podcastModal').setAttribute('aria-hidden', 'false');
+			document.body.classList.add('no-scroll');
+		}
+		function closePodcastModal() {
+			document.getElementById('podcastModal').setAttribute('aria-hidden', 'true');
+			document.body.classList.remove('no-scroll');
+		}
+		document.addEventListener('keydown', e => {
+			if (e.key === 'Escape') closePodcastModal();
+		});
+		// open & populate edit-video modal
+		function openEditVideoModal(btn) {
+		  const data = JSON.parse(btn.getAttribute('data-video'));
+		  const modal = document.getElementById('editVideoModal');
+
+		  // populate fields
+		  modal.querySelector('input[name="Id"]').value = data.Id;
+		  modal.querySelector('input[name="CategoryId"]').value = data.CategoryId;
+		  modal.querySelector('input[name="Title"]').value = data.Title;
+		  modal.querySelector('input[name="PublishedAt"]').value = data.PublishedAt?.split('T')[0];
+
+		  // show
+		  modal.setAttribute('aria-hidden', 'false');
+		  document.body.classList.add('no-scroll');
+		}
+
+		function closeEditVideoModal() {
+		  const modal = document.getElementById('editVideoModal');
+		  modal.setAttribute('aria-hidden', 'true');
+		  document.body.classList.remove('no-scroll');
+		}
+
+		// open & populate edit-podcast modal
+		function openEditPodcastModal(btn) {
+		  const data = JSON.parse(btn.getAttribute('data-podcast'));
+		  const modal = document.getElementById('editPodcastModal');
+
+		  modal.querySelector('input[name="Id"]').value = data.Id;
+		  modal.querySelector('input[name="CategoryId"]').value = data.CategoryId;
+		  modal.querySelector('input[name="Title"]').value = data.Title;
+		  modal.querySelector('input[name="PublishedAt"]').value = data.PublishedAt?.split('T')[0];
+
+		  modal.setAttribute('aria-hidden', 'false');
+		  document.body.classList.add('no-scroll');
+		}
+
+		function closeEditPodcastModal() {
+		  const modal = document.getElementById('editPodcastModal');
+		  modal.setAttribute('aria-hidden', 'true');
+		  document.body.classList.remove('no-scroll');
+		}
+
+		// allow Esc to close both
+		document.addEventListener('keydown', e => {
+		  if (e.key === 'Escape') {
+			closeEditVideoModal();
+			closeEditPodcastModal();
+		  }
+		});
+	</script>
+}
+
+
+
+@section Styles {
+	<style>
+		:root {
+			--padding-base: 2rem;
+			--gap-base: 1rem;
+			--radius-base: 1rem;
+			--btn-radius: 15px;
+			--shadow-light: rgba(0, 0, 0, 0.08);
+			--shadow-medium: rgba(0, 0, 0, 0.12);
+			--shadow-strong: rgba(0, 0, 0, 0.15);
+			--color-bg: #fff;
+			--color-text: #1F2937;
+			--color-muted: #333;
+		}
+
+		.category-details-page {
+			padding: var(--padding-base);
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1.5rem;
+		}
+
+		.media-section,
+		.section-header {
+			margin-bottom: var(--gap-base);
+		}
+
+		.tabs {
+			display: inline-flex;
+			gap: 0.5rem;
+			margin-bottom: 1.5rem;
+		}
+
+			.tabs .tab-btn {
+				all: unset;
+				cursor: pointer;
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.6rem 1.2rem;
+				border-radius: 9999px;
+				font-weight: 500;
+				color: #fff;
+				transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+			}
+
+			.tabs .tab-videos {
+				background: #FF0000;
+			}
+
+			.tabs .tab-podcasts {
+				background: #1DB954;
+			}
+
+			.tabs .tab-btn:not(.active) {
+				filter: brightness(0.8);
+			}
+
+			.tabs .tab-btn.active {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px var(--shadow-strong);
+			}
+
+		.media-items {
+			display: grid;
+			gap: var(--gap-base);
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		}
+
+		#podcasts-panel .media-items {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+
+		.media-card,
+		.podcast-card {
+			position: relative;
+			background: var(--color-bg);
+			border-radius: var(--radius-base);
+			box-shadow: 0 2px 12px var(--shadow-light);
+			overflow: hidden;
+			text-align: center;
+			transition: box-shadow 0.2s, transform 0.2s;
+		}
+
+			.media-card:hover,
+			.podcast-card:hover {
+				box-shadow: 0 4px 16px var(--shadow-medium);
+				transform: translateY(-2px);
+			}
+
+			.media-card img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+
+			.media-card p {
+				margin: 0;
+				padding: 0.75rem;
+				font-weight: 500;
+				color: var(--color-text);
+			}
+
+			.media-card.placeholder {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 120px;
+				background: #000;
+				color: #fff;
+				opacity: 0.6;
+				font-style: italic;
+			}
+
+				.media-card.placeholder img {
+					width: 40px;
+					height: 40px;
+					opacity: 0.4;
+				}
+
+				.media-card.placeholder p {
+					margin-top: 0.5rem;
+				}
+
+		#podcasts-panel .podcast-card {
+			display: flex;
+			border-radius: 1.5rem;
+		}
+
+			#podcasts-panel .podcast-card a {
+				display: flex;
+				width: 100%;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.75rem 1rem;
+				text-decoration: none;
+				color: #111;
+			}
+
+		#podcasts-panel .podcast-title {
+			/* flex: 1; */
+			white-space: normal;
+			font-weight: 600;
+			font-size: 1rem;
+		}
+
+		#podcasts-panel .logo-circle {
+			flex-shrink: 0;
+			width: 40px;
+			height: 40px;
+			background: #1DB954;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+			#podcasts-panel .logo-circle i {
+				color: #fff;
+				font-size: 1.2rem;
+			}
+
+		.btn-pill,
+		.add-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.7rem 0.7rem;
+			border-radius: var(--btn-radius);
+			font-weight: 500;
+			text-decoration: none;
+			color: #fff;
+			box-shadow: 0 2px 6px var(--shadow-strong);
+			transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s ease;
+			border: none;
+		}
+
+		.add-button {
+			background: #fff;
+			color: var(--color-muted);
+			padding: 0.5rem 1rem;
+			border-radius: 9999px;
+		}
+
+			.add-button:hover {
+				box-shadow: 0 4px 12px var(--shadow-strong);
+			}
+
+		.btn-pill .icon {
+			width: 20px;
+			height: 20px;
+		}
+
+		.btn-pill .plus {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.5rem;
+			height: 1.5rem;
+			background: rgba(255,255,255,0.2);
+			border-radius: 50%;
+			font-size: 1rem;
+		}
+
+		/* Button variants */
+		.btn-pill.videos {
+			background: #FF0000;
+		}
+
+		.btn-pill.podcasts {
+			background: #121212;
+		}
+
+		.btn-pill.edit {
+			background: #3B82F6;
+		}
+
+		.btn-pill.delete {
+			background: #EF4444;
+		}
+
+		.btn-pill.videos:hover {
+			background: #FF2529;
+			transform: scale(1.05);
+		}
+
+		.btn-pill.podcasts:hover {
+			background: #2A2A2A;
+			transform: scale(1.05);
+		}
+
+		.btn-pill.edit:hover {
+			background: #60A5FA;
+			transform: scale(1.05);
+		}
+
+		.btn-pill.delete:hover {
+			background: #F87171;
+			transform: scale(1.05);
+		}
+
+		.btn-pill.edit .fa-pencil,
+		.btn-pill.delete .fa-trash {
+			margin-right: 0.5rem;
+		}
+
+		/* Card actions */
+		.card-actions {
+			position: absolute;
+			top: 0.5rem;
+			right: 0.5rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			opacity: 0;
+			transition: opacity 0.2s;
+			z-index: 10;
+		}
+
+		.card-btn {
+			background: rgba(255,255,255,0.8);
+			border-radius: 0.25rem;
+			padding: 0.25rem;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			transition: background 0.2s;
+		}
+
+			.card-btn:hover {
+				background: rgba(255,255,255,1);
+			}
+
+			.card-btn button {
+				background: none;
+				border: none;
+				padding: 0;
+				cursor: pointer;
+			}
+
+			.card-btn.edit i,
+			.card-btn.delete i {
+				color: #1E1E1E;
+				font-size: 10px;
+			}
+
+		#videos-panel .media-card:hover .card-actions,
+		#podcasts-panel .podcast-card:hover .card-actions {
+			opacity: 1;
+		}
+
+		/* FadeIn Animation */
+		@@keyframes fadeIn {
+			from
+
+		{
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+
+		}
+
+		.tab-panel {
+			animation: fadeIn 0.2s ease-in;
+		}
+		button{
+			cursor: pointer;
+		}
+
+	</style>
+}

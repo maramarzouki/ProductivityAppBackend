@@ -1,0 +1,142 @@
+﻿@* _AddSpotifyPodcastModal.cshtml *@
+@using Model.CategoryModels
+
+<div id="podcastModal" class="modal-overlay" aria-hidden="true">
+	<div class="modal-window">
+		<button type="button" class="modal-close" onclick="closePodcastModal()">
+			<i class="fas fa-times"></i>
+		</button>
+
+		<form asp-action="Create" asp-controller="SpotifyPodcast" method="post" class="modal-form">
+			@* include the CategoryId so your controller knows which category *@
+			<input type="hidden" name="CategoryId" value="@ViewBag.CategoryId" />
+
+			<h2 class="modal-title">Spotify Podcast</h2>
+
+			<div class="modal-field">
+				<input type="text" name="Title" placeholder="Title" required />
+			</div>
+
+			<div class="modal-field">
+				<input type="text" name="SpotifyEpisodeId" placeholder="Podcast ID" required />
+			</div>
+
+			<div class="modal-field modal-datefield">
+				<input type="date" name="PublishedAt" placeholder="Published At" required />
+			</div>
+
+			<button type="submit" class="modal-add-btn">Add</button>
+		</form>
+	</div>
+</div>
+
+
+<style>
+	.no-scroll {
+		overflow: hidden;
+	}
+
+	/* Overlay */
+	.modal-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s;
+	}
+
+		.modal-overlay[aria-hidden="false"] {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+	/* Window */
+	.modal-window {
+		position: relative;
+		background: #fff;
+		border-radius: 12px;
+		padding: 2rem 1.5rem 1.5rem;
+		width: 90%;
+		max-width: 400px;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	}
+
+	/* Close button */
+	.modal-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		background: transparent;
+		border: none;
+		font-size: 1.2rem;
+		cursor: pointer;
+		color: #666;
+	}
+
+	/* Form layout */
+	.modal-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.modal-title {
+		/* margin: 0 0 0.5rem; */
+		font-size: 1.25rem;
+		text-align: center;
+	}
+
+	.modal-field {
+		position: relative;
+	}
+
+		.modal-field input {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 0.75rem 1rem;
+			border: none;
+			border-radius: 9999px;
+			background: #f8f8f8;
+			font-size: 1rem;
+			color: #333;
+			box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+		}
+
+			.modal-field input:focus {
+				outline: none;
+				box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+			}
+
+	/* Date picker icon */
+	.modal-datefield input {
+		padding-right: 2.5rem;
+	}
+
+	/* Bottom “Add” button in modal */
+	.modal-add-btn {
+		margin-top: 0.5rem;
+		width: 100%;
+		padding: 0.75rem;
+		background-color: #1ED760;
+		border: none;
+		border-radius: 8px;
+		color: #fff;
+		font-size: 1rem;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+
+		.modal-add-btn:hover {
+			background-color: #27B65A;
+		}
+</style>
+
+

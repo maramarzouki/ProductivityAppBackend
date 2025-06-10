@@ -8,6 +8,10 @@ CREATE TABLE users_table (
     ChangePasswordCodeExpiry BIGINT 
 );
 
+ALTER TABLE tasks_table
+  ADD isFirstTime BIT NOT NULL DEFAULT 0,
+  ADD areasToDevelop NVARCHAR(MAX) NULL;
+
 CREATE TABLE tasks_table (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     Label NVARCHAR(255) NOT NULL,
@@ -95,8 +99,72 @@ CREATE TABLE habits_table (
 );
 
 
-CREATE TABLE Admins (
+CREATE TABLE admins_table (
   Id           INT IDENTITY(1,1) PRIMARY KEY,
   Username     NVARCHAR(100) NOT NULL UNIQUE,
   PasswordHash NVARCHAR(200) NOT NULL
+);
+
+CREATE TABLE categories_table (
+  Id           INT IDENTITY(1,1) PRIMARY KEY,
+  Name     NVARCHAR(255) NOT NULL,
+);
+
+ALTER TABLE categories_table
+  ADD CONSTRAINT UQ_categories_table_Name
+  UNIQUE (Name);
+
+CREATE TABLE youtube_videos_table
+(
+    Id                INT             IDENTITY(1,1) PRIMARY KEY,
+    YouTubeVideoId    NVARCHAR(100)   NOT NULL,
+    Title             NVARCHAR(200)   NOT NULL,
+    Description       NVARCHAR(1000)  NULL,
+    EmbedUrl          NVARCHAR(500)   NOT NULL,
+    ThumbnailUrl      NVARCHAR(500)   NULL,
+    PublishedAt       DATETIME2       NOT NULL,
+    CategoryId        INT             NOT NULL,
+    CONSTRAINT FK_YoutubeVideos_Categories
+        FOREIGN KEY (CategoryId)
+        REFERENCES dbo.categories_table(Id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE spotify_podcasts_table
+(
+    Id                 INT             IDENTITY(1,1) PRIMARY KEY,
+    SpotifyEpisodeId   NVARCHAR(100)   NULL,
+    Title              NVARCHAR(200)   NOT NULL,
+    Description        NVARCHAR(1000)  NULL,
+    StreamUrl          NVARCHAR(500)   NOT NULL,
+    ThumbnailUrl       NVARCHAR(500)   NULL,
+    PublishedAt        DATETIME2       NULL,
+    CategoryId         INT             NOT NULL,
+    CONSTRAINT FK_SpotifyPodcasts_Categories
+        FOREIGN KEY (CategoryId)
+        REFERENCES dbo.categories_table(Id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE quiz_history_table
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    History NVARCHAR(Max)   NOT NULL,
+    Report NVARCHAR(Max)   NOT NULL,
+    ReportNb INT   NOT NULL,
+    Date DATETIME NOT NULL,
+    UserId INT NOT NULL,
+    CONSTRAINT FK_quiz_history_User FOREIGN KEY (UserId) REFERENCES users_table(Id) ON DELETE CASCADE
+);
+
+CREATE TABLE skills_progress_table
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    TestDate DATETIME NOT NULL,
+    OldProgress BIGINT NULL,
+    NewProgrress BIGINT NOT NULL,
+    CategoryName NVARCHAR(255) NOT NULL,
+    CONSTRAINT FK_skills_progress_CategoryName FOREIGN KEY (CategoryName) REFERENCES categories_table(Name) ON DELETE CASCADE,
+    UserId INT NOT NULL,
+    CONSTRAINT FK_skills_progress_User FOREIGN KEY (UserId) REFERENCES users_table(Id) ON DELETE CASCADE
 );

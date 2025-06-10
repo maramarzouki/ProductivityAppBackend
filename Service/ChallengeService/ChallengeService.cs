@@ -6,19 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Repository.ChallengeRepositoy;
+using Repository.UserRepository;
 
 namespace Service.ChallengeService
 {
     public class ChallengeService : IChallengeService
     {
         private readonly IChallengeRepository _challengeRepository;
-        public ChallengeService(IChallengeRepository challengeRepository)
+        private readonly IUserRepository _userRepository;
+        public ChallengeService(IChallengeRepository challengeRepository, IUserRepository userRepository)
         {
             _challengeRepository = challengeRepository;
+            _userRepository = userRepository;
         }
 
         public async Task<string> CreateChallenge(ChallengeModel challenge)
         {
+            var user = _userRepository.GetUserById(challenge.UserId);
+            if (user == null)
+            {
+                throw new Exception("User not found!");
+            }
             var newChallenge = new ChallengeModel
             {
                 Id = challenge.Id,

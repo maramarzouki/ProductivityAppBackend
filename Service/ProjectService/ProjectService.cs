@@ -5,19 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Repository.ProjectRepository;
+using Repository.UserRepository;
 
 namespace Service.ProjectService
 {
     public class ProjectService : IProjectService
     {
         private readonly IProjectRepository _projectRepository;
-        public ProjectService(IProjectRepository projectRepository)
+        private readonly IUserRepository _userRepository;
+        public ProjectService(IProjectRepository projectRepository, IUserRepository userRepository)
         {
             _projectRepository = projectRepository;
+            _userRepository = userRepository;
         }
 
         public async Task<string> CreateProject(ProjectModel project)
         {
+            var user = _userRepository.GetUserById(project.UserId);
+            if (user == null)
+            {
+                throw new Exception("User not found!");
+            }
             var newProject = new ProjectModel
             {
                 Id = project.Id,

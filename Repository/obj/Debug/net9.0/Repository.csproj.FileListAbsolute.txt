@@ -13,3 +13,4 @@ C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Repository\obj\Debug\net
 C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Repository\obj\Debug\net9.0\refint\Repository.dll
 C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Repository\obj\Debug\net9.0\Repository.pdb
 C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Repository\obj\Debug\net9.0\ref\Repository.dll
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Repository\obj\Debug\net9.0\Repository.sourcelink.json

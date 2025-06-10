@@ -5,18 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Repository.ReminderRepository;
+using Repository.UserRepository;
 
 namespace Service.ReminderService
 {
     public class ReminderService : IReminderService
     {
         private readonly IReminderRepository _reminderRepository;
-        public ReminderService(IReminderRepository reminderRepository)
+        private readonly IUserRepository _userRepository;
+        public ReminderService(IReminderRepository reminderRepository, IUserRepository userRepository)
         {
             _reminderRepository = reminderRepository;
+            _userRepository = userRepository;
         }
         public async Task<ReminderModel> CreateReminder(ReminderModel reminder)
         {
+            var user = _userRepository.GetUserById(reminder.UserId);
+            if (user == null)
+            {
+                throw new Exception("User not found!");
+            }
             var newReminder = new ReminderModel
             {
                 Id = reminder.Id,

@@ -1,6 +1,27 @@
 [
   {
     "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "FillAreasToDevelop",
+    "RelativePath": "api/auth/fillAreasToDevelop/{userID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "areasToDevelop",
+        "Type": "System.String[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
     "Method": "GetUserByEmail",
     "RelativePath": "api/auth/getUserByEmail/{email}",
     "HttpMethod": "GET",
@@ -74,6 +95,38 @@
       {
         "Name": "email",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "UpdateIsFirstTime",
+    "RelativePath": "api/auth/updateIsFirstTime/{userID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/auth/updateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Model.UserModel",
         "IsRequired": true
       }
     ],
@@ -447,6 +500,143 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizController",
+    "Method": "GenerateQuizQuestion",
+    "RelativePath": "api/quiz/generate-quiz-question",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "Model.GeminiModels.GeminiRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizController",
+    "Method": "GenerateQuizReport",
+    "RelativePath": "api/quiz/generate-quiz-report",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "Model.GeminiModels.GeminiRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizHistoryController",
+    "Method": "CreateProject",
+    "RelativePath": "api/quizHistory/addQuizHistory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "quizHistoryModel",
+        "Type": "Model.QuizHistoryModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizHistoryController",
+    "Method": "GetProjectByID",
+    "RelativePath": "api/quizHistory/compareReports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prompt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizHistoryController",
+    "Method": "DeleteQuizHistory",
+    "RelativePath": "api/quizHistory/deleteQuizHistory/{quizHistoryId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "quizHistoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizHistoryController",
+    "Method": "GetQuizHistory",
+    "RelativePath": "api/quizHistory/getQuizHistory/{userID}/{reportNb}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "reportNb",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.QuizHistoryController",
+    "Method": "GetQuizHistoryByUserID",
+    "RelativePath": "api/quizHistory/getQuizHistoryByUserID/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PlanningAndSkillsAppBackend.Controllers.ReminderController",
     "Method": "CreateReminder",
     "RelativePath": "api/reminder/createReminder",
@@ -515,6 +705,86 @@
       {
         "Name": "isActive",
         "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.SkillsProgressController",
+    "Method": "CreateProject",
+    "RelativePath": "api/skillsProgress/addSkillsProgress",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillsProgressModel",
+        "Type": "Model.SkillsProgressModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.SkillsProgressController",
+    "Method": "DeleteSkillsProgress",
+    "RelativePath": "api/skillsProgress/deleteSkillsProgress/{skillsProgressId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillsProgressId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.SkillsProgressController",
+    "Method": "GetHistoryQuiz",
+    "RelativePath": "api/skillsProgress/getSkillsProgress/{userID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.SkillsProgressController",
+    "Method": "GetSkillsProgressByUserID",
+    "RelativePath": "api/skillsProgress/getSkillsProgressByUserID/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PlanningAndSkillsAppBackend.Controllers.SkillsProgressController",
+    "Method": "UpdateSkillsProgress",
+    "RelativePath": "api/skillsProgress/updateSkillsProgress",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skillsProgressModel",
+        "Type": "Model.SkillsProgressModel",
         "IsRequired": true
       }
     ],

@@ -4,20 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using Repository.ChallengeRepositoy;
 using Repository.HabitRepository;
+using Repository.UserRepository;
 
 namespace Service.HabitService
 {
     public class HabitService : IHabitService
     {
         private readonly IHabitRepository _habitRepository;
-        public HabitService(IHabitRepository habitRepository)
+        private readonly IChallengeRepository _challengeRepository;
+        public HabitService(IHabitRepository habitRepository, IChallengeRepository challengeRepository)
         {
             _habitRepository = habitRepository;
+            _challengeRepository = challengeRepository;
         }
 
         public async Task<string> AddHabit(HabitModel habit)
         {
+            var challenge = _challengeRepository.GetChallengeById(habit.ChallengeId);
+            if (challenge == null)
+            {
+                throw new Exception("Challenge not found!");
+            }
             var newHabit = new HabitModel
             {
                 Id = habit.Id,

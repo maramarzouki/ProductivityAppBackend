@@ -15,5 +15,7 @@ namespace Model
         public string Password { get; set; } = string.Empty;
         public int? ChangePasswordCode { get; set; }
         public long? ChangePasswordCodeExpiry { get; set; }
+        public bool IsFirstTime { get; set; }
+        public string[]? AreasToDevelop { get; set; } = [];
     }
 }

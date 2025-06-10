@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Model.ViewModels;
 using Service.Admin;
 
 namespace PlanningAndSkillsAppBackend.Controllers

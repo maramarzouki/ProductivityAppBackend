@@ -24,8 +24,32 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/CategoryDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDYXRlZ29yeURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/_AddSpotifyPodcastModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xfQWRkU3BvdGlmeVBvZGNhc3RNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/_AddYoutubeVideoModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xfQWRkWW91dHViZVZpZGVvTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/_CategoryFormPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xfQ2F0ZWdvcnlGb3JtUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/_UpdateSpotifyPodcastModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xfVXBkYXRlU3BvdGlmeVBvZGNhc3RNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Categories/_UpdateYoutubeVideoModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xfVXBkYXRlWW91dHViZVZpZGVvTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MARAM/source/repos/PlanningAndSkillsAppBackend/PlanningAndSkillsAppBackend/Views/Dashboard/Index.cshtml]

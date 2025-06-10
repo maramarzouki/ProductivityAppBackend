@@ -16,5 +16,9 @@ namespace Service.UserService
         Task<string> VerifyCode(VerifyCodeDTO verifyCodeDTO);
         Task<string> UpdatePassword(ResetPasswordDTO resetPasswordDTO);
         Task<UserModel> GetUserByEmail(string email);
+        Task<UserModel> GetUserById(int id);
+        Task<string> UpdateUser(UserModel user);
+        Task<string> UpdateIsFirstTime(int userId);
+        Task<string> FillAreasToDevelop(int userId, string[] areasToDevelop);
     }
 }

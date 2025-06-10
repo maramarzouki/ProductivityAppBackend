@@ -98,6 +98,48 @@ namespace PlanningAndSkillsAppBackend.Controllers
                 return BadRequest(new { error = e.Message });
             }
         }
+
+        [HttpPut("updateUser")]
+        public async Task<IActionResult> UpdateUser([FromBody] UserModel user)
+        {
+            try
+            {
+                var result = await _userService.UpdateUser(user);
+                return Ok(new { message = result });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { error = e.Message });
+            }
+        }
+
+        [HttpPut("updateIsFirstTime/{userID}")]
+        public async Task<IActionResult> UpdateIsFirstTime([FromRoute] int userID)
+        {
+            try
+            {
+                var result = await _userService.UpdateIsFirstTime(userID);
+                return Ok(new { message = result });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { error = e.Message });
+            }
+        }
+
+        [HttpPut("fillAreasToDevelop/{userID}")]
+        public async Task<IActionResult> FillAreasToDevelop([FromRoute] int userID, [FromBody] string[] areasToDevelop)
+        {
+            try
+            {
+                var result = await _userService.FillAreasToDevelop(userID, areasToDevelop);
+                return Ok(new { message = result });
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { error = e.Message });
+            }
+        }
     }
 }
 

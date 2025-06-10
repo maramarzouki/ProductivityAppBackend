@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlanningAndSkillsAppBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e71c5cde6d70663bc000b5a09eef9db5fd6b662b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlanningAndSkillsAppBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlanningAndSkillsAppBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

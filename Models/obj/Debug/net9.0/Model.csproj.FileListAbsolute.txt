@@ -10,3 +10,4 @@ C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Models\obj\Debug\net9.0\
 C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Models\obj\Debug\net9.0\Model.pdb
 C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Models\obj\Debug\net9.0\ref\Model.dll
 C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Models\obj\Debug\net9.0\Model.csproj.AssemblyReference.cache
+C:\Users\MARAM\source\repos\PlanningAndSkillsAppBackend\Models\obj\Debug\net9.0\Model.sourcelink.json

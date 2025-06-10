@@ -1,0 +1,32 @@
+﻿@model Model.CategoryModels.SpotifyPodcastModel
+
+<div id="editPodcastModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-window">
+        <button type="button" class="modal-close" onclick="closeEditPodcastModal()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <form asp-action="Edit" asp-controller="SpotifyPodcast" method="post" class="modal-form">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CategoryId" />
+
+            <h2 class="modal-title">Edit Spotify Podcast</h2>
+
+            <div class="modal-field">
+                <input asp-for="Title" placeholder="Title" required />
+            </div>
+
+            @* <div class="modal-field"> *@
+            @*     <input asp-for="SpotifyEpisodeId" placeholder="Podcast ID" required /> *@
+            @* </div> *@
+
+            <div class="modal-field modal-datefield">
+                <input asp-for="PublishedAt" type="date" required />
+            </div>
+
+            <button type="submit" class="modal-add-btn">Save Changes</button>
+        </form>
+    </div>
+</div>
