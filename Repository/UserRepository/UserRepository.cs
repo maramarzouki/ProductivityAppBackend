@@ -144,16 +144,15 @@ namespace Repository.UserRepository
                 UPDATE users_table
                 SET
                     firstname = @firstname,
-                    lastname  = @lastname,
-                    email     = @email
-                WHERE Id = @id";
+                    lastname  = @lastname
+                WHERE email = @email";
             await using var con = new SqlConnection(_connectionString);
             await con.OpenAsync();
             await using var cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@firstname", user.FirstName);
             cmd.Parameters.AddWithValue("@lastname", user.LastName);
             cmd.Parameters.AddWithValue("@email", user.Email);
-            cmd.Parameters.AddWithValue("@id", user.Id);
+            //cmd.Parameters.AddWithValue("@id", user.Id);
             var result = await cmd.ExecuteNonQueryAsync();
             return result > 0;
         }
